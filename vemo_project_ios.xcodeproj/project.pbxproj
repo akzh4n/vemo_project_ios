@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73453AED29003336008D21F9 /* SearchViewController.swift */; };
 		734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */; };
 		734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9EF28FF42D9007EBD0A /* SceneDelegate.swift */; };
-		734DC9F228FF42D9007EBD0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9F128FF42D9007EBD0A /* ViewController.swift */; };
 		734DC9F528FF42D9007EBD0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734DC9F328FF42D9007EBD0A /* Main.storyboard */; };
 		734DC9F728FF42DA007EBD0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 734DC9F628FF42DA007EBD0A /* Assets.xcassets */; };
 		734DC9FA28FF42DA007EBD0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 734DC9F828FF42DA007EBD0A /* LaunchScreen.storyboard */; };
+		734DCA0628FF4A81007EBD0A /* Montserrat SemiBold 600.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0328FF4A81007EBD0A /* Montserrat SemiBold 600.ttf */; };
+		734DCA0728FF4A81007EBD0A /* Montserrat Bold 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0428FF4A81007EBD0A /* Montserrat Bold 700.ttf */; };
+		734DCA0828FF4A81007EBD0A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0528FF4A81007EBD0A /* Montserrat-Regular.ttf */; };
+		7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */; };
+		7397BFC528FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */; };
+		7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */; };
+		7397BFCD28FF6DC00014DE65 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFCC28FF6DC00014DE65 /* UserDefaults+Extension.swift */; };
+		73EB1A10290084C100F4563B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EB1A0F290084C100F4563B /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		73453AED29003336008D21F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		734DC9EA28FF42D9007EBD0A /* vemo_project_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vemo_project_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		734DC9EF28FF42D9007EBD0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		734DC9F128FF42D9007EBD0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		734DC9F428FF42D9007EBD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		734DC9F628FF42DA007EBD0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		734DC9F928FF42DA007EBD0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		734DC9FB28FF42DA007EBD0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		734DCA0328FF4A81007EBD0A /* Montserrat SemiBold 600.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat SemiBold 600.ttf"; path = "../../../../Downloads/Montserrat SemiBold 600.ttf"; sourceTree = "<group>"; };
+		734DCA0428FF4A81007EBD0A /* Montserrat Bold 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat Bold 700.ttf"; path = "../../../../Downloads/Montserrat Bold 700.ttf"; sourceTree = "<group>"; };
+		734DCA0528FF4A81007EBD0A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Downloads/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		7397BFCC28FF6DC00014DE65 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		73EB1A0F290084C100F4563B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,55 @@
 		734DC9EC28FF42D9007EBD0A /* vemo_project_ios */ = {
 			isa = PBXGroup;
 			children = (
+				7397BFCB28FF6DB30014DE65 /* Extenstions */,
+				7397BFC628FF6D240014DE65 /* Models */,
+				734DCA0928FF4F9B007EBD0A /* Controllers */,
+				734DCA0228FF4A1E007EBD0A /* fonts */,
 				734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */,
 				734DC9EF28FF42D9007EBD0A /* SceneDelegate.swift */,
-				734DC9F128FF42D9007EBD0A /* ViewController.swift */,
 				734DC9F328FF42D9007EBD0A /* Main.storyboard */,
 				734DC9F628FF42DA007EBD0A /* Assets.xcassets */,
 				734DC9F828FF42DA007EBD0A /* LaunchScreen.storyboard */,
 				734DC9FB28FF42DA007EBD0A /* Info.plist */,
 			);
 			path = vemo_project_ios;
+			sourceTree = "<group>";
+		};
+		734DCA0228FF4A1E007EBD0A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				734DCA0428FF4A81007EBD0A /* Montserrat Bold 700.ttf */,
+				734DCA0328FF4A81007EBD0A /* Montserrat SemiBold 600.ttf */,
+				734DCA0528FF4A81007EBD0A /* Montserrat-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		734DCA0928FF4F9B007EBD0A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */,
+				7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */,
+				73453AED29003336008D21F9 /* SearchViewController.swift */,
+				73EB1A0F290084C100F4563B /* InfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7397BFC628FF6D240014DE65 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7397BFCB28FF6DB30014DE65 /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				7397BFCC28FF6DC00014DE65 /* UserDefaults+Extension.swift */,
+			);
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +181,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				734DCA0828FF4A81007EBD0A /* Montserrat-Regular.ttf in Resources */,
 				734DC9FA28FF42DA007EBD0A /* LaunchScreen.storyboard in Resources */,
 				734DC9F728FF42DA007EBD0A /* Assets.xcassets in Resources */,
+				734DCA0728FF4A81007EBD0A /* Montserrat Bold 700.ttf in Resources */,
 				734DC9F528FF42D9007EBD0A /* Main.storyboard in Resources */,
+				734DCA0628FF4A81007EBD0A /* Montserrat SemiBold 600.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734DC9F228FF42D9007EBD0A /* ViewController.swift in Sources */,
+				7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */,
+				73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */,
 				734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */,
+				7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */,
 				734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */,
+				7397BFCD28FF6DC00014DE65 /* UserDefaults+Extension.swift in Sources */,
+				73EB1A10290084C100F4563B /* InfoViewController.swift in Sources */,
+				7397BFC528FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -290,11 +354,15 @@
 				DEVELOPMENT_TEAM = 32TDRHHMUS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = vemo_project_ios/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VemoApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,11 +386,15 @@
 				DEVELOPMENT_TEAM = 32TDRHHMUS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = vemo_project_ios/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = VemoApp;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
