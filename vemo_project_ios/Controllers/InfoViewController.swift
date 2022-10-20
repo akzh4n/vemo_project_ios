@@ -8,22 +8,48 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var cardView: UIView!
+    
+    @IBOutlet weak var transmissionLabel: UILabel!
+    @IBOutlet weak var manufactLabel: UILabel!
+    
+    @IBOutlet weak var engineLabel: UILabel!
+    
+    @IBOutlet weak var modelLabel: UILabel!
+    @IBOutlet weak var trimlabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var carName: UILabel!
+    @IBOutlet weak var carImageView: UIImageView!
+    
+    
+    
+    @IBOutlet weak var okBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.okBtn.layer.cornerRadius = 10
+        self.cardView.layer.cornerRadius = 20
 
-        // Do any additional setup after loading the view.
+   
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func okBtnTapped(_ sender: Any) {
+        
+        let SearchVC = storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        SearchVC.modalPresentationStyle = .fullScreen
+        SearchVC.modalTransitionStyle = .flipHorizontal
+        UserDefaults.standard.hasOnboarded = true
+        present(SearchVC, animated: true, completion: nil)
     }
-    */
+    
+    
+
+  
 
 }

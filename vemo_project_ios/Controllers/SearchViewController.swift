@@ -14,11 +14,16 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.seachBTN.layer.cornerRadius = 25
 
        
+       
     }
     
+    
+    
+
     
     
     @IBAction func searchBtnClicked(_ sender: Any)  {
@@ -26,19 +31,22 @@ class SearchViewController: UIViewController {
         if searchTF.text != "" {
             searchCompleted()
         } else {
-            showAlert(with: "Please, field requied!", and: "OK")
+            showAlert(with: "Error!", and: "Please fill all required")
         }
         
         
     }
     
     
+    
+    
     func searchCompleted() {
-        let controller = storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
-        controller.modalPresentationStyle = .fullScreen
-        controller.modalTransitionStyle = .flipHorizontal
+        let InfoVC = storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
+        InfoVC.modalPresentationStyle = .fullScreen
+        InfoVC.modalTransitionStyle = .flipHorizontal
         UserDefaults.standard.hasOnboarded = true
-        present(controller, animated: true, completion: nil)
+        present(InfoVC, animated: true, completion: nil)
+
     }
     
     
