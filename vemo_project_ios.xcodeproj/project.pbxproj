@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732659A52902A24F002ED56C /* VehicleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732659A42902A24F002ED56C /* VehicleData.swift */; };
+		732659A92902A647002ED56C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732659A82902A647002ED56C /* API.swift */; };
 		73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73453AED29003336008D21F9 /* SearchViewController.swift */; };
 		734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */; };
 		734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9EF28FF42D9007EBD0A /* SceneDelegate.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		732659A42902A24F002ED56C /* VehicleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleData.swift; sourceTree = "<group>"; };
+		732659A82902A647002ED56C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		73453AED29003336008D21F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		734DC9EA28FF42D9007EBD0A /* vemo_project_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vemo_project_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */,
+				732659A42902A24F002ED56C /* VehicleData.swift */,
+				732659A82902A647002ED56C /* API.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732659A92902A647002ED56C /* API.swift in Sources */,
 				7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */,
 				73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */,
+				732659A52902A24F002ED56C /* VehicleData.swift in Sources */,
 				734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */,
 				7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */,
 				734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */,

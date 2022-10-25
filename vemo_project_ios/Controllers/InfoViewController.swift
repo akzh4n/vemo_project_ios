@@ -26,15 +26,21 @@ class InfoViewController: UIViewController {
     
     
     @IBOutlet weak var okBtn: UIButton!
-    
-    
+
+    var networkManager = NetworkManager()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.okBtn.layer.cornerRadius = 10
         self.cardView.layer.cornerRadius = 20
-
-   
+        
+      
+        networkManager.postRequest()
+        self.performRequest()
+       
+    
     }
     
     
@@ -49,7 +55,65 @@ class InfoViewController: UIViewController {
     }
     
     
+    
+    func performRequest() {
+        
+        
+    let vehicleURL = "https://auto.dev/api/vin/SCBFR7ZA5CC072256?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"
+    let url = URL(string: vehicleURL)
+        
+    guard url != nil else {
+        return
+    }
+
+        let session = URLSession.shared
+
+        let dataTask = session.dataTask(with: url!) { (data, response, error) in
+
+        if error == nil && data != nil {
+
+         let decoder = JSONDecoder()
+
+         do {
+
+           let decodedData = try decoder.decode(VehicleData.self, from: data!)
+
+           print(decodedData)
+
+             DispatchQueue.main.async {
+                 self.carName.text = decodedData.make.name
+                 self.yearLabel.text = decodedData.transmission.numberOfSpeeds
+                 self.modelLabel.text = decodedData.model.name
+                 self.trimlabel.text = decodedData.transmission.availability
+                 self.engineLabel.text = decodedData.transmission.equipmentType
+                 self.transmissionLabel.text = decodedData.transmission.transmissionType
+                 self.manufactLabel.text = decodedData.transmission.automaticType
+                 
+//                 self.engineLabel.text = decodedData.transmission.equipmentType
+//                 self.trimlabel.text = decodedData.transmission.availability
+//                 self.transmissionLabel.text = String(decodedData.transmission.automaticType)
+//                 self.modelLabel.text = decodedData.transmission.transmissionType
+//                 self.carName.text = String(decodedData.transmission.numberOfSpeeds)
+                 
+                 
+             }
+           }
+           catch {
+               print("Error Parsing JSON")
+            }
+
+        }
+
+    }
+
+    dataTask.resume()
+ }
+    
+}
+    
+    
 
   
 
-}
+
+
