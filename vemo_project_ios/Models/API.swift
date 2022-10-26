@@ -8,41 +8,81 @@
 import Foundation
 import UIKit
 
-struct NetworkManager {
+
+public class NetworkManager {
     
     
+    let baseURL = "https://auto.dev/api/vin"
     
     
-    let vehicleURL = "https://auto.dev/api/vin/SCBFR7ZA5CC072256?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"
-    
-    
-    
-    func postRequest() {
-        let url = URL(string: vehicleURL)!
-        
-        
-        // let partnertoken = "836910c5c8f84cd5a966f927440e4282"
-        let authtoken = "ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"
-        
-        
-        
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
-        request.addValue("Bearer \(authtoken)", forHTTPHeaderField: "authorization")
-        //        request.addValue(partnertoken, forHTTPHeaderField: "partner-token")
-        request.httpMethod = "GET"
-        //        request.httpBody = jsonData
-        
-        
-        
-        URLSession.shared.dataTask(with: request) { (data, response , error) in
-            guard let data = data else { return }
-            print(String(data: data, encoding: .utf8) ?? "Invalid JSON")
-        }.resume()
+    func getRequest(for vinCode: String, completion: @escaping ((Vehicle) -> ())) {
+        if let url = URL (string: (baseURL + "/\(vinCode)" + ("?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"))) {
+            
+            let authtoken = "ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"
+            
+            var request = URLRequest(url: url)
+            request.addValue("application/json", forHTTPHeaderField: "content-type")
+            request.addValue("Bearer \(authtoken)", forHTTPHeaderField: "authorization")
+            
+            request.httpMethod = "GET"
+            
+            URLSession.shared.dataTask(with: request) { (data, response , error) in
+                guard let data = data else { return }
+                
+                if let model = try? JSONDecoder().decode(Vehicle.self, from: data) {
+                    print(model)
+                    completion(model)
+                } else  {
+                    print("Error")
+                }
+                
+            }
+            .resume()
+        }
     }
     
     
     
+//    static func getRequest(for vinCode: String, completion: @escaping (Result<Vehicle, Error>) -> Void) {
+//        let baseURL = "https://auto.dev/api/vin"
+//        if let url = URL (string: (baseURL + "/\(vinCode)" + ("?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"))) {
+//            URLSession.shared.dataTask(with: url) { data, urlResponse, error in
+//                if let _ = error {
+//                    completion(.failure(error!))
+//                }
+//
+//                guard let data = data else {
+//                    completion(.failure(error!))
+//                    return
+//                }
+//
+//                guard let vehicleData = try? JSONDecoder().decode(Vehicle.self, from: data) else {
+//                    completion(.failure(error!))
+//                    return
+//                }
+//
+//                DispatchQueue.main.async {
+//                    completion(.success(vehicleData))
+//                }
+//
+//            }
+//            .resume()
+//        }
     
- 
 }
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

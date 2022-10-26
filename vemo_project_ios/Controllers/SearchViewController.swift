@@ -10,50 +10,52 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var seachBTN: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchTF: UITextField!
+    
+    var networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.seachBTN.layer.cornerRadius = 25
-
-       
-       
+        self.activityIndicator.isHidden = true
+        
     }
-    
-    
-    
-
-    
     
     @IBAction func searchBtnClicked(_ sender: Any)  {
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
         
         if searchTF.text != "" {
-            searchCompleted()
+            networkManager.getRequest(for: searchTF.text!, completion: { [unowned self] model in
+              DispatchQueue.main.async {
+                    self.searchCompleted(model: model)
+                }
+                
+            })
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            
         } else {
-            showAlert(with: "Error!", and: "Please fill all required")
+            showAlert(with: "Error", and: "Please fill in an empty cell")
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
-        
-        
     }
     
+ 
     
-    
-    
-    func searchCompleted() {
+    func searchCompleted(model: Vehicle) {
+        
         let InfoVC = storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
+        InfoVC.model = model
         InfoVC.modalPresentationStyle = .fullScreen
         InfoVC.modalTransitionStyle = .flipHorizontal
         UserDefaults.standard.hasOnboarded = true
         present(InfoVC, animated: true, completion: nil)
-
     }
-    
-    
-    
-
 }
-
 
 extension SearchViewController {
     func showAlert(with title: String, and message: String, completion: @escaping () -> Void = { }) {
@@ -65,6 +67,3 @@ extension SearchViewController {
         present(alertController, animated: true, completion: nil)
     }
 }
-
-
-

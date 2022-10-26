@@ -13,37 +13,83 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     
     @IBOutlet weak var transmissionLabel: UILabel!
-    @IBOutlet weak var manufactLabel: UILabel!
+    @IBOutlet weak var needspeedLabel: UILabel!
     
-    @IBOutlet weak var engineLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     @IBOutlet weak var modelLabel: UILabel!
-    @IBOutlet weak var trimlabel: UILabel!
+    @IBOutlet weak var availabLabel: UILabel!
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var carName: UILabel!
     @IBOutlet weak var carImageView: UIImageView!
-    
-    
-    
     @IBOutlet weak var okBtn: UIButton!
+    
 
+    
+    var model: Vehicle?
+    
     var networkManager = NetworkManager()
-
-
+    var searchViewControllerInstance: SearchViewController?
+   
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+    
         
         self.okBtn.layer.cornerRadius = 10
         self.cardView.layer.cornerRadius = 20
         
-      
-        networkManager.postRequest()
-        self.performRequest()
-       
-    
+        
+        self.getData()
+        
+        self.imageSettings(carNameText: self.carName.text)
+        
+        
+        
+          
     }
     
     
+    
+    func imageSettings(carNameText: String?) {
+        if(carNameText == "Bentley") {//SCBFR7ZA5CC072256
+            self.carImageView.image = UIImage(named: "bentleycarnew")
+        }
+        if(carNameText == "Lamborghini") { //ZPBUA1ZL9KLA00848
+            self.carImageView.image = UIImage(named: "newlambocar")
+        }
+        if(carNameText == "Chevrolet") { //2G1WD58C869421675
+            self.carImageView.image = UIImage(named: "bugatticar")
+        }
+    }
+    
+    
+    
+    
+    func getData() {
+        
+        modelLabel.text = model?.model?.name
+        carName.text = model?.make?.name
+        
+        
+        let yearText = model?.years?[0].year
+        
+        let yearTextString = "\(yearText ?? 0)"
+        yearLabel.text = yearTextString
+        
+        let priceText = model?.price?.baseMsrp
+        let priceTextString = "\(priceText ?? 0)"
+        priceLabel.text = priceTextString
+        
+        
+        availabLabel.text = model?.transmission?.availability
+        transmissionLabel.text = model?.transmission?.transmissionType
+        needspeedLabel.text = model?.transmission?.numberOfSpeeds
+    }
     
     @IBAction func okBtnTapped(_ sender: Any) {
         
@@ -55,65 +101,22 @@ class InfoViewController: UIViewController {
     }
     
     
-    
-    func performRequest() {
-        
-        
-    let vehicleURL = "https://auto.dev/api/vin/SCBFR7ZA5CC072256?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"
-    let url = URL(string: vehicleURL)
-        
-    guard url != nil else {
-        return
-    }
 
-        let session = URLSession.shared
-
-        let dataTask = session.dataTask(with: url!) { (data, response, error) in
-
-        if error == nil && data != nil {
-
-         let decoder = JSONDecoder()
-
-         do {
-
-           let decodedData = try decoder.decode(VehicleData.self, from: data!)
-
-           print(decodedData)
-
-             DispatchQueue.main.async {
-                 self.carName.text = decodedData.make.name
-                 self.yearLabel.text = decodedData.transmission.numberOfSpeeds
-                 self.modelLabel.text = decodedData.model.name
-                 self.trimlabel.text = decodedData.transmission.availability
-                 self.engineLabel.text = decodedData.transmission.equipmentType
-                 self.transmissionLabel.text = decodedData.transmission.transmissionType
-                 self.manufactLabel.text = decodedData.transmission.automaticType
-                 
-//                 self.engineLabel.text = decodedData.transmission.equipmentType
-//                 self.trimlabel.text = decodedData.transmission.availability
-//                 self.transmissionLabel.text = String(decodedData.transmission.automaticType)
-//                 self.modelLabel.text = decodedData.transmission.transmissionType
-//                 self.carName.text = String(decodedData.transmission.numberOfSpeeds)
-                 
-                 
-             }
-           }
-           catch {
-               print("Error Parsing JSON")
-            }
-
-        }
-
-    }
-
-    dataTask.resume()
- }
-    
 }
+
+
     
     
+    
+    
+    
+    
+    
 
-  
+    
 
 
+   
+    
+    
 
