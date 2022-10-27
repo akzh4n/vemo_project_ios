@@ -23,6 +23,10 @@ class SearchViewController: UIViewController {
         
     }
     
+    
+    
+    // Conditions to check and get data + transition
+    
     @IBAction func searchBtnClicked(_ sender: Any)  {
         self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
@@ -44,8 +48,11 @@ class SearchViewController: UIViewController {
         }
     }
     
- 
     
+    
+    
+    
+    // Transition to InfoViewController
     func searchCompleted(model: Vehicle) {
         
         let InfoVC = storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
@@ -57,6 +64,8 @@ class SearchViewController: UIViewController {
     }
 }
 
+
+// Extension for use Alert Window
 extension SearchViewController {
     func showAlert(with title: String, and message: String, completion: @escaping () -> Void = { }) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

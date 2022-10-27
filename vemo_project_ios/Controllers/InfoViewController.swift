@@ -55,6 +55,10 @@ class InfoViewController: UIViewController {
     
     
     
+    
+    // Func to get data with image, have used because of there are no images from VIN Code
+    // Added by some reasons, but you can change and add your personal image or use other API
+    
     func imageSettings(carNameText: String?) {
         if(carNameText == "Bentley") {//SCBFR7ZA5CC072256
             self.carImageView.image = UIImage(named: "bentleycarnew")
@@ -69,6 +73,8 @@ class InfoViewController: UIViewController {
     
     
     
+    
+    // This function fully to get data from API and show
     
     func getData() {
         
@@ -91,6 +97,9 @@ class InfoViewController: UIViewController {
         needspeedLabel.text = model?.transmission?.numberOfSpeeds
     }
     
+    
+    
+    // To go back
     @IBAction func okBtnTapped(_ sender: Any) {
         
         let SearchVC = storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController

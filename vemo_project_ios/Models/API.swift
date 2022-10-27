@@ -15,6 +15,9 @@ public class NetworkManager {
     let baseURL = "https://auto.dev/api/vin"
     
     
+    
+    // Function for automatically writing your own VIN Code and requesting + receiving data
+    
     func getRequest(for vinCode: String, completion: @escaping ((Vehicle) -> ())) {
         if let url = URL (string: (baseURL + "/\(vinCode)" + ("?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"))) {
             

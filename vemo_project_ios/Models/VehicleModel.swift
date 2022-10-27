@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+
+
+
+// VEHICLE DATA 
+
+
 struct Vehicle: Decodable {
     let make: VehicleMake?
     let model: VehicleModel?

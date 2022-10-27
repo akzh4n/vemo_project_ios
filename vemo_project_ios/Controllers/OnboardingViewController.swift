@@ -13,6 +13,8 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    
+    // Array of slides
     var slides: [OnboardingSlide] = []
     
     var currentPage = 0 {
@@ -30,7 +32,12 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         
         
+        
+        
         nextBtn.layer.cornerRadius = 10
+        
+        
+        // Presentation Slider information
         
         slides = [
             OnboardingSlide(title: "Find the car", description: "A handy vehicle search system is available for you here", image: #imageLiteral(resourceName: "firstscreen_icon")),
@@ -40,6 +47,8 @@ class OnboardingViewController: UIViewController {
         
         pageControl.numberOfPages = slides.count
     }
+    
+    // To change slide
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
@@ -56,6 +65,10 @@ class OnboardingViewController: UIViewController {
     }
     
 }
+
+
+
+// Using collection view to add and change slides
 
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

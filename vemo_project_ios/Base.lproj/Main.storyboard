@@ -52,16 +52,16 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FcL-w8-rfV">
-                                                    <rect key="frame" x="16" y="513.33333333333337" width="382" height="82.666666666666629"/>
+                                                    <rect key="frame" x="16" y="479.66666666666669" width="382" height="116.33333333333331"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Delivery At Your Doorstep" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJA-cS-5xH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="29.333333333333332"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="61"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="25"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home delivery and Online reservation systen for restaurants and cafes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEl-2T-Zwk">
-                                                            <rect key="frame" x="0.0" y="45.333333333333258" width="382" height="37.333333333333343"/>
+                                                            <rect key="frame" x="0.0" y="76.999999999999943" width="382" height="39.333333333333343"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -76,7 +76,7 @@
                                                     </constraints>
                                                 </stackView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thirdscreen_icon2" translatesAutoresizingMaskIntoConstraints="NO" id="gFb-bO-bwh">
-                                                    <rect key="frame" x="110" y="200" width="194" height="213.33333333333337"/>
+                                                    <rect key="frame" x="110" y="200" width="194" height="179.66666666666663"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemFillColor"/>
@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Lv-cR-l4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="869.56521739130437" y="48.214285714285715"/>
+            <point key="canvasLocation" x="869" y="75"/>
         </scene>
         <!--Info View Controller-->
         <scene sceneID="q7E-rE-yp6">
@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A2i-Db-kAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644.9275362318842" y="571.875"/>
+            <point key="canvasLocation" x="1907" y="75"/>
         </scene>
     </scenes>
     <resources>
