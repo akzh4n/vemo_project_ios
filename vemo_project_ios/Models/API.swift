@@ -41,33 +41,7 @@ public class NetworkManager {
         }
     }
     
-    
-    
-//    static func getRequest(for vinCode: String, completion: @escaping (Result<Vehicle, Error>) -> Void) {
-//        let baseURL = "https://auto.dev/api/vin"
-//        if let url = URL (string: (baseURL + "/\(vinCode)" + ("?apikey=ZrQEPSkKYWt6aGFuLmthejIwMDNAZ21haWwuY29t"))) {
-//            URLSession.shared.dataTask(with: url) { data, urlResponse, error in
-//                if let _ = error {
-//                    completion(.failure(error!))
-//                }
-//
-//                guard let data = data else {
-//                    completion(.failure(error!))
-//                    return
-//                }
-//
-//                guard let vehicleData = try? JSONDecoder().decode(Vehicle.self, from: data) else {
-//                    completion(.failure(error!))
-//                    return
-//                }
-//
-//                DispatchQueue.main.async {
-//                    completion(.success(vehicleData))
-//                }
-//
-//            }
-//            .resume()
-//        }
+
     
 }
 
