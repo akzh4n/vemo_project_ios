@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var seachBTN: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchTF: UITextField!
+
     
     var networkManager = NetworkManager()
     
@@ -21,10 +22,20 @@ class SearchViewController: UIViewController {
         self.seachBTN.layer.cornerRadius = 25
         self.activityIndicator.isHidden = true
         
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+ 
     }
+
     
+
     
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+
     // Conditions to check and get data + transition
     
     @IBAction func searchBtnClicked(_ sender: Any)  {
@@ -55,7 +66,7 @@ class SearchViewController: UIViewController {
     // Transition to InfoViewController
     func searchCompleted(model: Vehicle) {
         
-        let InfoVC = storyboard?.instantiateViewController(identifier: "InfoViewController") as! InfoViewController
+        let InfoVC = storyboard?.instantiateViewController(identifier: "InfoVC") as! InfoViewController
         InfoVC.model = model
         InfoVC.modalPresentationStyle = .fullScreen
         InfoVC.modalTransitionStyle = .flipHorizontal

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		543B49B351AD7D0CEE8DCF1E /* Pods_vemo_project_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAE9D6DCDA97C2E4AAE743B /* Pods_vemo_project_ios.framework */; };
 		732659A92902A647002ED56C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732659A82902A647002ED56C /* API.swift */; };
 		7343510729099C040069F35C /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7343510629099C040069F35C /* VehicleModel.swift */; };
+		7344C848290FBC9B003715A8 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C847290FBC9B003715A8 /* Validators.swift */; };
+		7344C84A290FBCC1003715A8 /* AuthProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344C849290FBCC1003715A8 /* AuthProcess.swift */; };
 		73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73453AED29003336008D21F9 /* SearchViewController.swift */; };
 		734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */; };
 		734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734DC9EF28FF42D9007EBD0A /* SceneDelegate.swift */; };
@@ -18,6 +21,10 @@
 		734DCA0628FF4A81007EBD0A /* Montserrat SemiBold 600.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0328FF4A81007EBD0A /* Montserrat SemiBold 600.ttf */; };
 		734DCA0728FF4A81007EBD0A /* Montserrat Bold 700.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0428FF4A81007EBD0A /* Montserrat Bold 700.ttf */; };
 		734DCA0828FF4A81007EBD0A /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 734DCA0528FF4A81007EBD0A /* Montserrat-Regular.ttf */; };
+		7367B391290FADD100C3713D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7367B390290FADD000C3713D /* LoginViewController.swift */; };
+		7367B393290FADDF00C3713D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7367B392290FADDF00C3713D /* RegisterViewController.swift */; };
+		7367B395290FAE7F00C3713D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7367B394290FAE7F00C3713D /* GoogleService-Info.plist */; };
+		7367B397290FB47400C3713D /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7367B396290FB47400C3713D /* UIResponder+Utils.swift */; };
 		7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */; };
 		7397BFC528FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */; };
 		7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */; };
@@ -26,8 +33,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C4A874CB677F600D52866C8 /* Pods-vemo_project_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vemo_project_ios.release.xcconfig"; path = "Target Support Files/Pods-vemo_project_ios/Pods-vemo_project_ios.release.xcconfig"; sourceTree = "<group>"; };
 		732659A82902A647002ED56C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		7343510629099C040069F35C /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
+		7344C847290FBC9B003715A8 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		7344C849290FBCC1003715A8 /* AuthProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProcess.swift; sourceTree = "<group>"; };
 		73453AED29003336008D21F9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		734DC9EA28FF42D9007EBD0A /* vemo_project_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vemo_project_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		734DC9ED28FF42D9007EBD0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,11 +49,17 @@
 		734DCA0328FF4A81007EBD0A /* Montserrat SemiBold 600.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat SemiBold 600.ttf"; path = "../../../../Downloads/Montserrat SemiBold 600.ttf"; sourceTree = "<group>"; };
 		734DCA0428FF4A81007EBD0A /* Montserrat Bold 700.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat Bold 700.ttf"; path = "../../../../Downloads/Montserrat Bold 700.ttf"; sourceTree = "<group>"; };
 		734DCA0528FF4A81007EBD0A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../../../Downloads/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		7367B390290FADD000C3713D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7367B392290FADDF00C3713D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7367B394290FAE7F00C3713D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7367B396290FB47400C3713D /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
 		7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		7397BFCC28FF6DC00014DE65 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		73EB1A0F290084C100F4563B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		8CAE9D6DCDA97C2E4AAE743B /* Pods_vemo_project_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_vemo_project_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94778C1D1C905830BECD6B76 /* Pods-vemo_project_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vemo_project_ios.debug.xcconfig"; path = "Target Support Files/Pods-vemo_project_ios/Pods-vemo_project_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				543B49B351AD7D0CEE8DCF1E /* Pods_vemo_project_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1058E0629ECB22E33C59AA29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94778C1D1C905830BECD6B76 /* Pods-vemo_project_ios.debug.xcconfig */,
+				6C4A874CB677F600D52866C8 /* Pods-vemo_project_ios.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		200A65FFAA2600697C28D26E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CAE9D6DCDA97C2E4AAE743B /* Pods_vemo_project_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		734DC9E128FF42D8007EBD0A = {
 			isa = PBXGroup;
 			children = (
 				734DC9EC28FF42D9007EBD0A /* vemo_project_ios */,
 				734DC9EB28FF42D9007EBD0A /* Products */,
+				1058E0629ECB22E33C59AA29 /* Pods */,
+				200A65FFAA2600697C28D26E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +121,7 @@
 				734DC9F328FF42D9007EBD0A /* Main.storyboard */,
 				734DC9F628FF42DA007EBD0A /* Assets.xcassets */,
 				734DC9F828FF42DA007EBD0A /* LaunchScreen.storyboard */,
+				7367B394290FAE7F00C3713D /* GoogleService-Info.plist */,
 				734DC9FB28FF42DA007EBD0A /* Info.plist */,
 			);
 			path = vemo_project_ios;
@@ -107,6 +144,8 @@
 				7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */,
 				73453AED29003336008D21F9 /* SearchViewController.swift */,
 				73EB1A0F290084C100F4563B /* InfoViewController.swift */,
+				7367B390290FADD000C3713D /* LoginViewController.swift */,
+				7367B392290FADDF00C3713D /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				7397BFCC28FF6DC00014DE65 /* UserDefaults+Extension.swift */,
+				7367B396290FB47400C3713D /* UIResponder+Utils.swift */,
+				7344C847290FBC9B003715A8 /* Validators.swift */,
+				7344C849290FBCC1003715A8 /* AuthProcess.swift */,
 			);
 			path = Extenstions;
 			sourceTree = "<group>";
@@ -136,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 734DC9FE28FF42DA007EBD0A /* Build configuration list for PBXNativeTarget "vemo_project_ios" */;
 			buildPhases = (
+				220FA54AA2A4122F23320A6D /* [CP] Check Pods Manifest.lock */,
 				734DC9E628FF42D8007EBD0A /* Sources */,
 				734DC9E728FF42D8007EBD0A /* Frameworks */,
 				734DC9E828FF42D8007EBD0A /* Resources */,
+				5A49E12B91EE8B80260637B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,10 +237,53 @@
 				734DCA0728FF4A81007EBD0A /* Montserrat Bold 700.ttf in Resources */,
 				734DC9F528FF42D9007EBD0A /* Main.storyboard in Resources */,
 				734DCA0628FF4A81007EBD0A /* Montserrat SemiBold 600.ttf in Resources */,
+				7367B395290FAE7F00C3713D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		220FA54AA2A4122F23320A6D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-vemo_project_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A49E12B91EE8B80260637B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vemo_project_ios/Pods-vemo_project_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-vemo_project_ios/Pods-vemo_project_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-vemo_project_ios/Pods-vemo_project_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		734DC9E628FF42D8007EBD0A /* Sources */ = {
@@ -206,13 +293,18 @@
 				732659A92902A647002ED56C /* API.swift in Sources */,
 				7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */,
 				73453AEE29003336008D21F9 /* SearchViewController.swift in Sources */,
+				7367B393290FADDF00C3713D /* RegisterViewController.swift in Sources */,
 				734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */,
 				7343510729099C040069F35C /* VehicleModel.swift in Sources */,
+				7367B397290FB47400C3713D /* UIResponder+Utils.swift in Sources */,
 				7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */,
+				7344C848290FBC9B003715A8 /* Validators.swift in Sources */,
+				7344C84A290FBCC1003715A8 /* AuthProcess.swift in Sources */,
 				734DC9F028FF42D9007EBD0A /* SceneDelegate.swift in Sources */,
 				7397BFCD28FF6DC00014DE65 /* UserDefaults+Extension.swift in Sources */,
 				73EB1A10290084C100F4563B /* InfoViewController.swift in Sources */,
 				7397BFC528FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift in Sources */,
+				7367B391290FADD100C3713D /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +446,7 @@
 		};
 		734DC9FF28FF42DA007EBD0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94778C1D1C905830BECD6B76 /* Pods-vemo_project_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +479,7 @@
 		};
 		734DCA0028FF42DA007EBD0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C4A874CB677F600D52866C8 /* Pods-vemo_project_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

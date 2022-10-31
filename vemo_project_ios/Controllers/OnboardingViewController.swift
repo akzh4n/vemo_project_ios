@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAnalytics
+
 
 class OnboardingViewController: UIViewController {
 
@@ -16,6 +18,7 @@ class OnboardingViewController: UIViewController {
     
     // Array of slides
     var slides: [OnboardingSlide] = []
+    var window: UIWindow?
     
     var currentPage = 0 {
         didSet {
@@ -52,11 +55,9 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
-            let controller = storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .flipHorizontal
-            UserDefaults.standard.hasOnboarded = true
-            present(controller, animated: true, completion: nil)
+//            let LoginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginViewController
+//            self.view.window?.rootViewController = LoginVC
+//            self.view.window?.makeKeyAndVisible()
         } else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

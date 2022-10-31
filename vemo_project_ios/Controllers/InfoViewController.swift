@@ -102,7 +102,7 @@ class InfoViewController: UIViewController {
     // To go back
     @IBAction func okBtnTapped(_ sender: Any) {
         
-        let SearchVC = storyboard?.instantiateViewController(identifier: "SearchViewController") as! SearchViewController
+        let SearchVC = storyboard?.instantiateViewController(identifier: "SearchVC") as! SearchViewController
         SearchVC.modalPresentationStyle = .fullScreen
         SearchVC.modalTransitionStyle = .flipHorizontal
         UserDefaults.standard.hasOnboarded = true
