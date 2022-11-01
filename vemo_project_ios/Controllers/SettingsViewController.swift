@@ -18,7 +18,6 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     
     
-    @IBOutlet weak var changeImageBtn: UIButton!
     
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -35,7 +34,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         
-        photoImage.layer.cornerRadius = 40
+        photoImage.layer.cornerRadius = 50
         photoImage.layer.masksToBounds = true
         photoImage.layer.borderWidth = 3
         
@@ -70,33 +69,34 @@ class SettingsViewController: UIViewController {
     func fetchUser() {
         
         let userUID = Auth.auth().currentUser?.uid
-        db.collection("newusers").document(userUID!).getDocument { [self] snapshot, error in
-            if error != nil {
-                print("Error")
-            }
-            else {
-                
-                let name = snapshot?.get("username") as? String
-                self.nameLabel.text = (name)!
-                let surname = snapshot?.get("surname") as? String
-                self.surnameLabel.text = (surname)!
-                let email = snapshot?.get("email") as? String
-                self.emailLabel.text = (email)!
-
-
-                let storage = Storage.storage()
-                var reference: StorageReference!
-                reference = storage.reference(forURL: "gs://vemoapp-project-ios.appspot.com/useravatars/\(userUID!)")
-                reference.downloadURL { (url, error) in
-                    let data = NSData(contentsOf: url!)
-                    let image = UIImage(data: data! as Data)
-                    self.photoImage.image = image
+        if userUID != nil {
+            db.collection("newusers").document(userUID!).getDocument { [self] snapshot, error in
+                if error != nil {
+                    print("Error")
+                }
+                else {
+                    
+                    let name = snapshot?.get("username") as? String
+                    self.nameLabel.text = (name)!
+                    let surname = snapshot?.get("surname") as? String
+                    self.surnameLabel.text = (surname)!
+                    let email = snapshot?.get("email") as? String
+                    self.emailLabel.text = (email)!
+                    
+                    
+                    let storage = Storage.storage()
+                    var reference: StorageReference!
+                    reference = storage.reference(forURL: "gs://vemoapp-project-ios.appspot.com/useravatars/\(userUID!)")
+                    reference.downloadURL { (url, error) in
+                        let data = NSData(contentsOf: url!)
+                        let image = UIImage(data: data! as Data)
+                        self.photoImage.image = image
+                        
+                    }
                     
                 }
                 
             }
-            
-            
         }
     }
     

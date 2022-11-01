@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.seachBTN.layer.cornerRadius = 20
+        self.seachBTN.layer.cornerRadius = 35
         self.activityIndicator.isHidden = true
         
         

@@ -173,7 +173,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Sif-py-vrR"/>
-                                    <constraint firstAttribute="width" constant="280" id="s2c-Wi-pWX"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="s2c-Wi-pWX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -191,10 +191,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fQz-AM-wcN">
-                                <rect key="frame" x="170" y="536" width="74" height="50"/>
+                                <rect key="frame" x="170" y="537.5" width="74" height="70"/>
                                 <color key="backgroundColor" systemColor="systemFillColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Fuu-ws-alv"/>
+                                    <constraint firstAttribute="height" constant="70" id="Fuu-ws-alv"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -204,7 +204,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J5p-8u-vdV">
-                                <rect key="frame" x="177" y="638.5" width="61" height="62.5"/>
+                                <rect key="frame" x="177" y="660" width="61" height="41"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WE9-jo-JD0">
                                 <rect key="frame" x="320" y="68" width="74" height="26.5"/>
@@ -229,8 +229,7 @@
                             <constraint firstItem="ETP-dI-7Tb" firstAttribute="centerX" secondItem="t5J-Br-rhx" secondAttribute="centerX" id="JVa-26-L2i"/>
                             <constraint firstItem="uRc-9l-BzZ" firstAttribute="top" secondItem="t5J-Br-rhx" secondAttribute="top" constant="116" id="NP8-82-Krp"/>
                             <constraint firstItem="J5p-8u-vdV" firstAttribute="leading" secondItem="t5J-Br-rhx" secondAttribute="leading" constant="177" id="Oik-nx-WHQ"/>
-                            <constraint firstItem="fQz-AM-wcN" firstAttribute="centerX" secondItem="ETP-dI-7Tb" secondAttribute="centerX" id="OkP-Jm-rGX"/>
-                            <constraint firstItem="fQz-AM-wcN" firstAttribute="top" secondItem="ETP-dI-7Tb" secondAttribute="bottom" constant="58.5" id="OnY-gc-kAR"/>
+                            <constraint firstItem="fQz-AM-wcN" firstAttribute="top" secondItem="ETP-dI-7Tb" secondAttribute="bottom" constant="60" id="OnY-gc-kAR"/>
                             <constraint firstItem="t5J-Br-rhx" firstAttribute="trailing" secondItem="fQz-AM-wcN" secondAttribute="trailing" constant="170" id="P6R-g4-Ihe"/>
                             <constraint firstItem="t5J-Br-rhx" firstAttribute="bottom" secondItem="J5p-8u-vdV" secondAttribute="bottom" constant="161" id="QBk-Mw-MI3"/>
                             <constraint firstItem="t5J-Br-rhx" firstAttribute="trailing" secondItem="uRc-9l-BzZ" secondAttribute="trailing" constant="65" id="R3g-lg-wxY"/>
@@ -455,29 +454,20 @@
                                 <rect key="frame" x="37" y="184.5" width="348" height="527.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KKj-Ei-WnX">
-                                        <rect key="frame" x="100" y="30" width="148" height="113"/>
+                                        <rect key="frame" x="100" y="30" width="148" height="100"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CPO-q8-RcC">
-                                                <rect key="frame" x="34" y="0.5" width="80" height="79"/>
+                                                <rect key="frame" x="24" y="0.5" width="100" height="99"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="755-ef-6TX"/>
-                                                    <constraint firstAttribute="width" constant="80" id="npr-VW-O7I"/>
+                                                    <constraint firstAttribute="height" constant="100" id="755-ef-6TX"/>
+                                                    <constraint firstAttribute="width" constant="100" id="npr-VW-O7I"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzj-Hj-g32">
-                                                <rect key="frame" x="19.5" y="88" width="109" height="25"/>
-                                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="10"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Upload profile photo"/>
-                                                <connections>
-                                                    <action selector="changeImageBtnPressed:" destination="pha-Nu-v1P" eventType="touchUpInside" id="apV-gi-KSV"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Ssi-jS-s28">
-                                        <rect key="frame" x="20" y="193" width="308" height="112.5"/>
+                                        <rect key="frame" x="20" y="190" width="308" height="112.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="GkK-dp-7Ca">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="17.5"/>
@@ -533,7 +523,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="URT-ue-6F1">
-                                        <rect key="frame" x="50" y="352.5" width="248" height="31"/>
+                                        <rect key="frame" x="50" y="367.5" width="248" height="31"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -549,12 +539,12 @@
                                 <constraints>
                                     <constraint firstItem="Ssi-jS-s28" firstAttribute="leading" secondItem="BIa-Cf-vP9" secondAttribute="leading" constant="20" id="2pf-cm-GCc"/>
                                     <constraint firstItem="KKj-Ei-WnX" firstAttribute="leading" secondItem="BIa-Cf-vP9" secondAttribute="leading" constant="100" id="36t-34-Pi3"/>
-                                    <constraint firstItem="URT-ue-6F1" firstAttribute="top" secondItem="Ssi-jS-s28" secondAttribute="bottom" constant="47" id="76x-sO-gNC"/>
+                                    <constraint firstItem="URT-ue-6F1" firstAttribute="top" secondItem="Ssi-jS-s28" secondAttribute="bottom" constant="65" id="76x-sO-gNC"/>
                                     <constraint firstAttribute="trailing" secondItem="URT-ue-6F1" secondAttribute="trailing" constant="50" id="COg-eg-KNO"/>
                                     <constraint firstAttribute="trailing" secondItem="Ssi-jS-s28" secondAttribute="trailing" constant="20" id="DPx-b9-Vo2"/>
                                     <constraint firstItem="KKj-Ei-WnX" firstAttribute="top" secondItem="BIa-Cf-vP9" secondAttribute="top" constant="30" id="JEK-Fn-i2E"/>
                                     <constraint firstItem="URT-ue-6F1" firstAttribute="leading" secondItem="BIa-Cf-vP9" secondAttribute="leading" constant="50" id="OQp-Wo-m3h"/>
-                                    <constraint firstItem="Ssi-jS-s28" firstAttribute="top" secondItem="KKj-Ei-WnX" secondAttribute="bottom" constant="50" id="X2g-Ex-hZq"/>
+                                    <constraint firstItem="Ssi-jS-s28" firstAttribute="top" secondItem="KKj-Ei-WnX" secondAttribute="bottom" constant="60" id="X2g-Ex-hZq"/>
                                     <constraint firstAttribute="trailing" secondItem="KKj-Ei-WnX" secondAttribute="trailing" constant="100" id="hxb-0x-9fT"/>
                                 </constraints>
                             </view>
@@ -583,7 +573,6 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="BIa-Cf-vP9" id="uv4-lu-TUu"/>
-                        <outlet property="changeImageBtn" destination="jzj-Hj-g32" id="KQC-xG-oUS"/>
                         <outlet property="emailLabel" destination="tiI-bW-Q4P" id="5MC-L7-3Hj"/>
                         <outlet property="nameLabel" destination="mdk-si-2nu" id="hhZ-Za-JHM"/>
                         <outlet property="okBtn" destination="URT-ue-6F1" id="tlE-TF-R8Z"/>
