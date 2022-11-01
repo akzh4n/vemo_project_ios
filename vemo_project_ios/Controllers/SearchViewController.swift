@@ -13,13 +13,14 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchTF: UITextField!
 
+    @IBOutlet weak var settingsBtn: UIButton!
     
     var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.seachBTN.layer.cornerRadius = 25
+        self.seachBTN.layer.cornerRadius = 20
         self.activityIndicator.isHidden = true
         
         
@@ -29,7 +30,17 @@ class SearchViewController: UIViewController {
     }
 
     
-
+    // Go to Settings View
+    
+    @IBAction func settingsBtnTapped(_ sender: Any) {
+        let SettingsVC = storyboard?.instantiateViewController(identifier: "SettingsVC") as! SettingsViewController
+        SettingsVC.modalPresentationStyle = .fullScreen
+        SettingsVC.modalTransitionStyle = .flipHorizontal
+        UserDefaults.standard.hasOnboarded = true
+        present(SettingsVC, animated: true, completion: nil)
+        
+    }
+    
     
     @objc func dismissKeyboard() {
         view.endEditing(true)

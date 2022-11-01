@@ -25,6 +25,7 @@
 		7367B393290FADDF00C3713D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7367B392290FADDF00C3713D /* RegisterViewController.swift */; };
 		7367B395290FAE7F00C3713D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7367B394290FAE7F00C3713D /* GoogleService-Info.plist */; };
 		7367B397290FB47400C3713D /* UIResponder+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7367B396290FB47400C3713D /* UIResponder+Utils.swift */; };
+		738B207F291182C100C65B0B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B207E291182C100C65B0B /* SettingsViewController.swift */; };
 		7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */; };
 		7397BFC528FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */; };
 		7397BFC828FF6D2D0014DE65 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */; };
@@ -53,6 +54,7 @@
 		7367B392290FADDF00C3713D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7367B394290FAE7F00C3713D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7367B396290FB47400C3713D /* UIResponder+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+Utils.swift"; sourceTree = "<group>"; };
+		738B207E291182C100C65B0B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7397BFC228FF6C7F0014DE65 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7397BFC428FF6CAE0014DE65 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		7397BFC728FF6D2D0014DE65 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				73EB1A0F290084C100F4563B /* InfoViewController.swift */,
 				7367B390290FADD000C3713D /* LoginViewController.swift */,
 				7367B392290FADDF00C3713D /* RegisterViewController.swift */,
+				738B207E291182C100C65B0B /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				734DC9EE28FF42D9007EBD0A /* AppDelegate.swift in Sources */,
 				7343510729099C040069F35C /* VehicleModel.swift in Sources */,
 				7367B397290FB47400C3713D /* UIResponder+Utils.swift in Sources */,
+				738B207F291182C100C65B0B /* SettingsViewController.swift in Sources */,
 				7397BFC328FF6C7F0014DE65 /* OnboardingViewController.swift in Sources */,
 				7344C848290FBC9B003715A8 /* Validators.swift in Sources */,
 				7344C84A290FBCC1003715A8 /* AuthProcess.swift in Sources */,

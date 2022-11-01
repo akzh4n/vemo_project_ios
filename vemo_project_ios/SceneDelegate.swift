@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseFirestore
+import FirebaseStorage
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,14 +16,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        
+        
+                // Settings to Onboarding and Login views
+                // For example to skip after launching or if user loggen in
 
                let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
                let launchStoryboard = UIStoryboard(name: "Main", bundle: nil)
                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+               let currentUser = Auth.auth().currentUser?.uid
                var vc: UIViewController
                if launchedBefore
                {
-                   vc = mainStoryboard.instantiateInitialViewController()!
+                   if(currentUser == nil) {
+                       vc = mainStoryboard.instantiateInitialViewController()!
+                   } else {
+                       vc = mainStoryboard.instantiateViewController(identifier: "SearchVC")
+                   }
+                   
                }
                else
                {
@@ -28,6 +41,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                }
                UserDefaults.standard.set(true, forKey: "hasLaunched")
                self.window?.rootViewController = vc
+        }
+        
+                
            
     }
 
@@ -60,5 +76,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
-}
+
 

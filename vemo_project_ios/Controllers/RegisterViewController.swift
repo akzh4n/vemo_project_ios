@@ -5,10 +5,11 @@
 //  Created by Акжан Калиматов on 31.10.2022.
 //
 
+import Foundation
 import UIKit
+import FirebaseFirestore
 import FirebaseAuth
 import FirebaseStorage
-import FirebaseFirestore
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     
@@ -17,7 +18,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var surnameTF: UITextField!
     @IBOutlet weak var nameTF: UITextField!
     
+    @IBOutlet weak var photoVIew: UIImageView!
     
+    @IBOutlet weak var changeImageBtn: UIButton!
     @IBOutlet weak var emailTF: UITextField!
     
     
@@ -27,6 +30,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     
+    
+    // Image Picker
+    var imagePicker:UIImagePickerController!
+    
+    // Image url
+    var urlString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +59,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         surnameTF.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
         
         
+        photoVIew.layer.cornerRadius = 35
+        photoVIew.layer.masksToBounds = true
+        photoVIew.layer.borderWidth = 3
+        photoVIew.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1.0).cgColor
+        
+        
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tapGesture)
         
         
     }
+    
+    
     
     
     // Keyboard settings to hide and show
@@ -132,14 +149,60 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    
+    
+    // Change image by clicking button
+    
+    @IBAction func changeImageBtnPressed(_ sender: Any) {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    
+    // Uploading image in firebase storage by user id and image url
+    
+    func upload(currentUserId: String, photo: UIImage, completion: @escaping (Result<URL, Error>) -> Void) {
+        let ref = Storage.storage().reference().child("useravatars").child(currentUserId)
+        
+        guard let imageData = photoVIew.image?.jpegData(compressionQuality: 0.4) else { return }
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        
+        ref.putData(imageData, metadata: metadata) { (metadata, error) in
+            guard let _ = metadata else {
+                completion(.failure(error!))
+                return
+            }
+            ref.downloadURL { (url, error) in
+                guard let url = url else {
+                    completion(.failure(error!))
+                    return
+                }
+                completion(.success(url))
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    // Register process
+    
+    
     func register(email: String?, password: String?, completion: @escaping (AuthResult) -> Void) {
         
         guard Validators.isFilledReg(username: nameTF.text,
+                                     surename: surnameTF.text,
                                      email: emailTF.text,
-                                     password: passwordTF.text,
-                                     surename: surnameTF.text) else {
-            completion(.failure(AuthError.notFilled))
-            return
+                                     password: passwordTF.text)
+                                     else {
+                                    completion(.failure(AuthError.notFilled))
+                                    return
         }
         guard let email = email, let password = password else {
             completion(.failure(AuthError.unknownError))
@@ -151,30 +214,40 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
+    
         
         Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-            guard result != nil else {
+            guard let result = result else {
                 completion(.failure(error!))
-                
-                let userUID = Auth.auth().currentUser?.uid
-                let db = Firestore.firestore()
-                db.collection("newusers").document(userUID!).setData([
-                    "name": self.nameTF.text!,
-                    "surename": self.surnameTF.text!,
-                    "password": self.passwordTF.text!,
-                    "email": self.emailTF.text!,
-                ]) { (error) in
-                    if let error = error {
-                        completion(.failure(error))
-                    }
-                    completion(.success)
-                }
                 return
             }
-            return print("Error")
+            self.upload(currentUserId: result.user.uid, photo: self.photoVIew.image!) { (myresult) in
+                switch myresult {
+                case .success(let url):
+                    self.urlString = url.absoluteString
+                    let db = Firestore.firestore()
+                    db.collection("newusers").document(result.user.uid).setData([
+                        "username": self.nameTF.text!,
+                        "surname": self.surnameTF.text!,
+                        "email": self.emailTF.text!,
+                        "password": self.passwordTF.text!,
+                        "avatarURL": url.absoluteString,
+                        "uid": result.user.uid
+                    ]) { (error) in
+                        if let error = error {
+                            completion(.failure(error))
+                        }
+                        completion(.success)
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            }
+            
+            
         }
     }
+    
     
     // Sign up process
     
@@ -207,16 +280,28 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    // Go to onboarding
+    // Go to SearchVC
     
     func transitionToSearch() {
         
-        let SearchVC = storyboard?.instantiateViewController(withIdentifier: "SearchVC") as? OnboardingViewController
-        
+        let SearchVC = storyboard?.instantiateViewController(withIdentifier: "SearchVC") as? SearchViewController
         view.window?.rootViewController = SearchVC
         view.window?.makeKeyAndVisible()
     }
     
+}
+
+
+
+
+
+extension RegisterViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        photoVIew.image = image
+    }
 }
 
 extension RegisterViewController {

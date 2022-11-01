@@ -18,7 +18,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTF: UITextField!
     
     @IBOutlet weak var activityView: UIActivityIndicatorView!
-    @IBOutlet weak var regBtn: UILabel!
+   
+    @IBOutlet weak var regBtn: UIButton!
     
     @IBOutlet weak var loginBtn: UIButton!
     
@@ -29,7 +30,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         cardView.layer.cornerRadius = 20
         
         loginBtn.layer.cornerRadius = 10
-        
+        regBtn.isUserInteractionEnabled = true
+       
         setLogButton(enabled: false)
         activityView.isHidden = true
         
@@ -49,27 +51,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
       
 
-        self.addGesture()
+       
 
     }
     
     // Go to the registrations page
     
-    func addGesture() {
 
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.labelTapped(_:)))
-           tap.numberOfTapsRequired = 1
-           self.regBtn.isUserInteractionEnabled = true
-           self.regBtn.addGestureRecognizer(tap)
-       }
+    @IBAction func regBtnTapped(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let RegisterVC = (storyboard.instantiateViewController(withIdentifier: "RegisterVC") as? RegisterViewController)!
+        self.navigationController?.pushViewController(RegisterVC, animated: true)
+    }
     
-    
-    @objc func labelTapped(_ tap: UITapGestureRecognizer) {
 
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            let RegisterVC = (storyboard.instantiateViewController(withIdentifier: "RegisterVC") as? RegisterViewController)!
-            self.navigationController?.pushViewController(RegisterVC, animated: true)
-       }
     
     
     
@@ -98,6 +94,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             NotificationCenter.default.removeObserver(self)
         }
     
+    
+   
     
     
     

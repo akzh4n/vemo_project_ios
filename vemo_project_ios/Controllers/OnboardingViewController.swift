@@ -19,6 +19,7 @@ class OnboardingViewController: UIViewController {
     // Array of slides
     var slides: [OnboardingSlide] = []
     var window: UIWindow?
+    var vc: UIViewController?
     
     var currentPage = 0 {
         didSet {
@@ -55,9 +56,11 @@ class OnboardingViewController: UIViewController {
     
     @IBAction func nextBtnClicked(_ sender: UIButton) {
         if currentPage == slides.count - 1 {
-//            let LoginVC = self.storyboard?.instantiateViewController(identifier: "LoginVC") as? LoginViewController
-//            self.view.window?.rootViewController = LoginVC
-//            self.view.window?.makeKeyAndVisible()
+            let controller = storyboard?.instantiateViewController(identifier: "LoginNC") as! UINavigationController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            UserDefaults.standard.hasOnboarded = true
+            present(controller, animated: true, completion: nil)
         } else {
             currentPage += 1
             let indexPath = IndexPath(item: currentPage, section: 0)

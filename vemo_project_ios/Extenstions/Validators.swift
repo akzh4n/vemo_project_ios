@@ -11,11 +11,12 @@ import Foundation
 
 class Validators {
     
-    static func isFilledReg(username: String?, email: String?, password: String?, surename: String?) -> Bool {
+    static func isFilledReg(username: String?, surename: String?, email: String?, password: String?) -> Bool {
         guard !(username ?? "").isEmpty,
+            !(surename ?? "").isEmpty,
             !(email ?? "").isEmpty,
-            !(password ?? "").isEmpty,
-            !(surename ?? "").isEmpty else {
+            !(password ?? "").isEmpty
+                else {
                 return false
         }
         return true
