@@ -108,7 +108,9 @@ The user by entering the car number, get full information about the model of the
 
 
 - Vehicle Info 
- ```sh
+
+
+```sh
  
  struct Vehicle: Decodable {
     let make: VehicleMake?
@@ -150,8 +152,7 @@ struct VehicleYears: Decodable {
     let id: Int?
     let year: Int?
 }
-
-...
+``` 
 
 
 &nbsp;
