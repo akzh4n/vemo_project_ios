@@ -10,7 +10,6 @@ import UIKit
 class SearchViewController: UIViewController {
 
     @IBOutlet weak var seachBTN: UIButton!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var searchTF: UITextField!
 
     @IBOutlet weak var settingsBtn: UIButton!
@@ -21,7 +20,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         self.seachBTN.layer.cornerRadius = 35
-        self.activityIndicator.isHidden = true
+   
         
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -50,8 +49,6 @@ class SearchViewController: UIViewController {
     // Conditions to check and get data + transition
     
     @IBAction func searchBtnClicked(_ sender: Any)  {
-        self.activityIndicator.isHidden = false
-        self.activityIndicator.startAnimating()
         
         if searchTF.text != "" {
             networkManager.getRequest(for: searchTF.text!, completion: { [unowned self] model in
@@ -60,13 +57,10 @@ class SearchViewController: UIViewController {
                 }
                 
             })
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
+    
             
         } else {
             showAlert(with: "Error", and: "Please fill in an empty cell")
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
         }
     }
     
