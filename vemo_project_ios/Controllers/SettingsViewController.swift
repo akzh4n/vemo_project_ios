@@ -19,6 +19,7 @@ class SettingsViewController: UIViewController {
     
     
     
+    @IBOutlet weak var logOutBtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var surnameLabel: UILabel!
@@ -40,12 +41,27 @@ class SettingsViewController: UIViewController {
         
         
         self.cardView.layer.cornerRadius = 30
-        self.okBtn.layer.cornerRadius = 15
+        self.okBtn.layer.cornerRadius = 10
+        self.logOutBtn.layer.cornerRadius = 10
         
         
         self.fetchUser()
         
     }
+    
+    
+    
+    @IBAction func logOutBtnTapped(_ sender: Any) {
+        try! Auth.auth().signOut()
+        if let storyboard = self.storyboard {
+            let controller = storyboard.instantiateViewController(identifier: "LoginNC") as! UINavigationController
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .flipHorizontal
+            UserDefaults.standard.hasOnboarded = true
+            present(controller, animated: true, completion: nil)
+        }
+    }
+    
     
     
     
